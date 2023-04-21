@@ -37,18 +37,13 @@ public class StudentService
     {
         //TODO Loop through students hashmap and print out students' details including the enrolled courses
         //this.students.values(); //returns `Students` object
-        String thisStudent = "";
-        String enrolledCourses = "";
 
         for (Student student : this.students.values()) {
-//            allStudents += student; //returns values of `Student` object as specified by the `toString` in `Student` class
-//            allCourses += this.enrolledCourses(student);
-            enrolledCourses = student.getEnrolledCourses().values().toString().replaceAll("\\[|\\]", "");
-            thisStudent = String.format(student + "\nEnrolled Courses: \n" + enrolledCourses);
-            System.out.println(thisStudent);
+            System.out.println(student + "\nEnrolled Courses: ");
+            for (EnrolledCourse e : student.getEnrolledCourses().values()) {
+                System.out.println(e);
+            }
         }
-        //System.out.println(allStudents + "\nEnrolled Courses: \n" + allCourses);
-
     }
 
     public HashMap<String, EnrolledCourse> enrolledCourses(Student student)

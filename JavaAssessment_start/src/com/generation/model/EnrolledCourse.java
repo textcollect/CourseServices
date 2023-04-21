@@ -22,6 +22,6 @@ public class EnrolledCourse extends Course
 
     public String toString()
     {
-        return super.toString() + " Grade: " + this.grade + "\n";
+        return super.toString() + " Grade: " + this.grade;
     }
 }
